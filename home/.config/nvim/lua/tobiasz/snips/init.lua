@@ -1,0 +1,6 @@
+require("tobiasz.snips.all")
+require("tobiasz.snips.lua")
+require("tobiasz.snips.javascript-all")
+require("tobiasz.snips.react")
+require("tobiasz.snips.rust")
+require("tobiasz.snips.go")
