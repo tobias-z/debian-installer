@@ -1,8 +1,8 @@
 #!/bin/bash
 
 for arg in "$@"; do
-    echo "arg is: $arg"
-    if [ "$arg" = "--with-folder-structure" ]; then
+    if [ "$arg" = "--setup-folder-structure" ]; then
         echo "copying folders"
+        exit 0
     fi
 done

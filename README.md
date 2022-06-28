@@ -2,7 +2,7 @@
 
 Installation of my own debian system
 
-# Installation
+## Installation
 
 From the root folder run:
 
@@ -10,8 +10,13 @@ From the root folder run:
 sh bin/install.sh
 ```
 
-or
+### Arguments
+
+- setup-folder-structure
+- setup-git
+
+Example:
 
 ```bash
-sh bin/install.sh --with-folder-structure
+sh bin/install.sh --setup-folder-structure
 ```
