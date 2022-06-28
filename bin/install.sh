@@ -1,11 +1,12 @@
 #!/bin/bash
 
+args=$@
+
 execute_file () {
     local file_name=$1
-    for file in $file_name
-    do
+    for file in $file_name; do
         echo "Installing $file ..."
-        sh $file
+        sh $file $args
 
         if [ $? -eq 1 ]; then
             echo "Failed to install $file"
@@ -14,5 +15,5 @@ execute_file () {
     done
 }
 
-execute_file ./pre-installers/*.sh
-execute_file ./post-installers/*.sh
+execute_file ./bin/pre-installers/*.sh
+execute_file ./bin/post-installers/*.sh
