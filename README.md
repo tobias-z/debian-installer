@@ -12,8 +12,9 @@ sh bin/install.sh
 
 ### Arguments
 
-- setup-folder-structure
-- setup-git
+- (-e|--email) $EMAIL_NAME
+- (-f|--setup-folder-structure)
+- (-g|--setup-git)
 
 Example:
 
