@@ -5,6 +5,7 @@ export DOTFILES="$HOME/.config/nvim"
 export PATH=$PATH:$HOME/.local/share/nvim/lsp_servers/lua-language-server/bin
 export PATH=$PATH:/usr/local/go/bin
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+export PATH="$HOME/.cargo/bin:$PATH"
 export GOPATH=$HOME/go
 export GOBIN=$GOPATH/bin
 export PATH=$PATH:$GOBIN
@@ -185,12 +186,12 @@ export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || pr
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-export SDKMAN_DIR="$HOME/.sdkman"
-[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
+# export SDKMAN_DIR="$HOME/.sdkman"
+# [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
 
 # Generated for envman. Do not edit.
 [ -s "$HOME/.config/envman/load.sh" ] && source "$HOME/.config/envman/load.sh"
 
-if [ -z "$TMUX" ]; then
-    tmux attach -t tobiasz || tmux new -s tobiasz
-fi
+# if [ -z "$TMUX" ]; then
+#     tmux attach -t tobiasz || tmux new -s tobiasz
+# fi
