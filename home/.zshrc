@@ -1,9 +1,5 @@
-#If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
-
-if [ -z "$TMUX" ]; then
-    tmux attach -t tobiasz || tmux new -s tobiasz
-fi
+# If you come from bash you might have to change your $PATH.
+export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 export DOTFILES="$HOME/.config/nvim"
 export PATH=$PATH:$HOME/.local/share/nvim/lsp_servers/lua-language-server/bin
@@ -15,8 +11,10 @@ export PATH=$PATH:$GOBIN
 export GPG_TTY=$(tty)
 # Path to your oh-my-zsh installation.
 export ZSH="/usr/share/oh-my-zsh"
-export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
+export PATH=$HOME/dev/scripts/tmux-workspaces/src:$PATH
+export TW_CONFIG="$HOME/.config/tw"
+export TW_PATHS="$HOME/dev/tz-stack $HOME/dev/scripts $HOME/dev/js $HOME/dev/rust $HOME/Documents $HOME/.config $HOME/dev/plugins"
+export TW_MAIN_WINDOW="main"
 
 export PATH="$HOME/.cargo/bin/alacritty/:$PATH"
 # Set name of the theme to load --- if set to "random", it will
@@ -183,9 +181,16 @@ storm() {
 	sh $HOME/.local/share/JetBrains/Toolbox/apps/WebStorm/ch-0/221.5080.193/bin/webstorm.sh $1
 }
 
+export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
+
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
 
 # Generated for envman. Do not edit.
 [ -s "$HOME/.config/envman/load.sh" ] && source "$HOME/.config/envman/load.sh"
+
+if [ -z "$TMUX" ]; then
+    tmux attach -t tobiasz || tmux new -s tobiasz
+fi
