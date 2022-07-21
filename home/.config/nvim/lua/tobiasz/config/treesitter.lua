@@ -15,6 +15,9 @@ require("nvim-treesitter.configs").setup({
         "go",
     },
 
+    -- Automatically install missing parsers when entering buffer
+    auto_install = true,
+
     -- Install parsers synchronously (only applied to `ensure_installed`)
     sync_install = false,
 

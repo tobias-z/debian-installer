@@ -21,12 +21,12 @@ return require("packer").startup(function(use)
     use("kyazdani42/nvim-tree.lua")
     use("rcarriga/nvim-notify")
     use("nvim-lualine/lualine.nvim")
+    use("justinmk/vim-sneak")
 
     -- treesitter
     use({ "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" })
     use("windwp/nvim-ts-autotag")
     use("nvim-treesitter/playground")
-
     use("windwp/nvim-autopairs")
 
     -- lsp
@@ -37,12 +37,16 @@ return require("packer").startup(function(use)
     use("hrsh7th/nvim-cmp") -- Autocompletion plugin
     use("hrsh7th/cmp-nvim-lsp") -- LSP source for nvim-cmp
     use("saadparwaiz1/cmp_luasnip") -- Snippets source for nvim-cmp
+    use("hrsh7th/cmp-buffer")
+    use("hrsh7th/cmp-path")
+    use("rcarriga/cmp-dap")
     use("L3MON4D3/LuaSnip") -- Snippets plugin
     use({
         "jose-elias-alvarez/null-ls.nvim",
         requires = { "nvim-lua/plenary.nvim" },
     })
     use("jose-elias-alvarez/nvim-lsp-ts-utils")
+    use("mfussenegger/nvim-jdtls")
 
     -- Telescope
     use({
@@ -50,7 +54,6 @@ return require("packer").startup(function(use)
         requires = { { "nvim-lua/plenary.nvim" } },
     })
     use({ "nvim-telescope/telescope-ui-select.nvim" })
-    -- use("nvim-telescope/telescope-fzy-native.nvim")
     use({ "nvim-telescope/telescope-fzf-native.nvim", run = "make" })
     use("nvim-telescope/telescope-project.nvim")
     use("nvim-telescope/telescope-node-modules.nvim")
@@ -77,6 +80,11 @@ return require("packer").startup(function(use)
     -- Git
     use("tpope/vim-fugitive")
 
+    -- Database
+    use("tpope/vim-dadbod")
+    use("kristijanhusak/vim-dadbod-ui")
+    use("kristijanhusak/vim-dadbod-completion")
+
     -- Debugging
     use("mfussenegger/nvim-dap")
     use("theHamsta/nvim-dap-virtual-text")
@@ -84,4 +92,7 @@ return require("packer").startup(function(use)
 
     -- Testing
     use("vim-test/vim-test")
+
+    -- Latex
+    use("donRaphaco/neotex")
 end)

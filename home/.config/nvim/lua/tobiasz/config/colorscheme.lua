@@ -44,6 +44,24 @@ Group.new("DiagnosticUnderlineWarn", nil, nil, s.undercurl + s.bold, c.orange)
 Group.new("DiagnosticUnderlineHint", nil, nil, s.undercurl + s.bold, c.white)
 Group.new("DiagnosticUnderlineInfo", nil, nil, s.undercurl + s.bold, c.blue:light())
 
+vim.cmd([[highlight! CmpItemAbbrDeprecated guibg=NONE gui=strikethrough guifg=#808080]])
+vim.cmd([[highlight! CmpItemAbbrMatch guibg=NONE guifg=#f8fe7a]])
+vim.cmd([[highlight! CmpItemAbbrMatchFuzzy guibg=NONE guifg=#f8fe7a]])
+vim.cmd([[highlight! CmpItemKindVariable guibg=NONE guifg=#F5CD8E]])
+vim.cmd([[highlight! CmpItemKindField guibg=NONE guifg=#F5CD8E]])
+vim.cmd([[highlight! CmpItemKindEnumMember guibg=NONE guifg=#F5CD8E]])
+vim.cmd([[highlight! CmpItemKindConstant guibg=NONE guifg=#F5CD8E]])
+vim.cmd([[highlight! CmpItemKindInterface guibg=NONE guifg=#A1D091]])
+vim.cmd([[highlight! CmpItemKindClass guibg=NONE guifg=#90D1EA]])
+vim.cmd([[highlight! CmpItemKindEnum guibg=NONE guifg=#90D1EA]])
+vim.cmd([[highlight! CmpItemKindText guibg=NONE guifg=#9AA7B0]])
+vim.cmd([[highlight! CmpItemKindSnippet guibg=NONE guifg=#9AA7B0]])
+vim.cmd([[highlight! CmpItemKindFunction guibg=NONE guifg=#F9B9C4]])
+vim.cmd([[highlight! CmpItemKindMethod guibg=NONE guifg=#F9B9C4]])
+vim.cmd([[highlight! CmpItemKindKeyword guibg=NONE guifg=#9AA7B0]])
+vim.cmd([[highlight! CmpItemKindProperty guibg=NONE guifg=#D3C2F8]])
+vim.cmd([[highlight! CmpItemKindUnit guibg=NONE guifg=#9AA7B0]])
+
 local signs = { Error = "", Warn = "", Hint = "", Info = "" }
 for type, icon in pairs(signs) do
     local hl = "DiagnosticSign" .. type

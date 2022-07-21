@@ -16,6 +16,7 @@ VMap.nmap("<C-l>", "<cmd>wincmd l<CR>")
 VMap.nmap("<C-h>", "<cmd>wincmd h<CR>")
 VMap.nmap("<C-j>", "<cmd>wincmd j<CR>")
 VMap.nmap("<C-k>", "<cmd>wincmd k<CR>")
+
 VMap.vmap("<Tab>", ">gv")
 VMap.vmap("<S-Tab>", "<gv")
 VMap.vmap("<C-J>", ":m '>+1<CR>gv=gv")

@@ -13,6 +13,7 @@ local tab_settings = {
             "typescriptreact",
             "yml",
             "yaml",
+            "tex",
         },
         config = {
             tab_size = 2,
