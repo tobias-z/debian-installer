@@ -28,7 +28,8 @@ path=$(dirname $(realpath $0))
 
 execute_file () {
     local file_name=$path/$1
-    echo "Installing $file ..."
+    echo "Installing $file_name ..."
+    echo "args: $email, $setup_git, $setup_folder_structure"
     sh $file_name $email $setup_git $setup_folder_structure
 
     if [ $? -eq 1 ]; then

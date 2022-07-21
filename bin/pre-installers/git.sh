@@ -2,7 +2,7 @@
 
 email=$1
 
-if [ "$2" = "1" ]; then
+if [ "$2" != "1" ]; then
     exit 0
 fi
 
@@ -17,9 +17,7 @@ sudo make prefix=/usr/local install
 
 echo "git version $(git --version) was succesfully installed"
 
-if [ -f ~/.ssh/id_rsa.pub ] && [ ! -f ~/.ssh/ed25519.pub ] ; then
-    ssh-keygen -t ed25519 -C $email
-fi
+ssh-keygen -t ed25519 -C $email
 
 curl -fsSL https://cli.github.com/packages/githubcli-archive-keyring.gpg | sudo dd of=/usr/share/keyrings/githubcli-archive-keyring.gpg
 sudo chmod go+r /usr/share/keyrings/githubcli-archive-keyring.gpg
