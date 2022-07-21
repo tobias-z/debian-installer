@@ -11,7 +11,7 @@ export GOBIN=$GOPATH/bin
 export PATH=$PATH:$GOBIN
 export GPG_TTY=$(tty)
 # Path to your oh-my-zsh installation.
-export ZSH="/usr/share/oh-my-zsh"
+export ZSH="$HOME/.oh-my-zsh"
 export PATH=$HOME/dev/scripts/tmux-workspaces/src:$PATH
 export TW_CONFIG="$HOME/.config/tw"
 export TW_PATHS="$HOME/dev/tz-stack $HOME/dev/scripts $HOME/dev/js $HOME/dev/rust $HOME/Documents $HOME/.config $HOME/dev/plugins"

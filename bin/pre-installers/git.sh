@@ -2,10 +2,6 @@
 
 email=$1
 
-if [ "$2" != "1" ]; then
-    exit 0
-fi
-
 sudo apt install make build-essential libssl-dev libghc-zlib-dev libcurl4-gnutls-dev libexpat1-dev gettext unzip -y
 
 cd /tmp

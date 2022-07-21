@@ -3,8 +3,6 @@
 sudo apt install zsh -y
 chsh -s $(which zsh)
 
-source ~/.zshrc
-
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
 source ~/.zshrc
