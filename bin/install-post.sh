@@ -38,9 +38,6 @@ execute_file () {
     fi
 }
 
-execute_file pre-installers/setup.sh
-execute_file pre-installers/git.sh
-execute_file pre-installers/zsh.sh
 execute_file pre-installers/golang.sh
 execute_file pre-installers/python.sh
 execute_file pre-installers/rust.sh
