@@ -212,4 +212,4 @@ exec --no-startup-id i3-msg 'exec discord'
 exec --no-startup-id i3-msg 'exec teams'
 
 # set system background
-exec feh --bg-fill /home/tobiasz/Pictures/rustlang.png
+exec feh --bg-fill ~/Pictures/wallpapers/nord-mountains.jpg
