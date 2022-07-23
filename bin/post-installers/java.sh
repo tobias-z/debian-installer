@@ -34,4 +34,4 @@ cd ~/bin/.local
 chmod +x bin/*
 cd bin
 
-sudo apt install libxml2-utils -y
+sudo nala install libxml2-utils -y

@@ -1,3 +1,3 @@
 #!/bin/bash
 
-sudo apt install texlive-full -y
+sudo nala install texlive-full -y

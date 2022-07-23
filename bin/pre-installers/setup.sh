@@ -4,6 +4,9 @@ sudo apt update -y
 sudo apt upgrade -y
 sudo apt-get update -y
 
-# TODO: Add nala before doing anything and use it to download
+# Use nala for package management
+echo "deb http://deb.volian.org/volian/ scar main" | sudo tee /etc/apt/sources.list.d/volian-archive-scar-unstable.list
+wget -qO - https://deb.volian.org/volian/scar.key | sudo tee /etc/apt/trusted.gpg.d/volian-archive-scar-unstable.gpg
+sudo apt install nala
 
-sudo apt install software-properties-common htop neofetch ncdu wget curl ripgrep tmux zip unzip feh fzf xkeycaps autokey-gtk nmap snapd gcc gnome-tweaks -y
+sudo nala install software-properties-common htop neofetch ncdu wget curl ripgrep tmux zip unzip feh fzf xkeycaps autokey-gtk nmap snapd gcc gnome-tweaks -y
