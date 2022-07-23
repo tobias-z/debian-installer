@@ -1,0 +1,13 @@
+#!/bin/bash
+
+cols=$COLUMNS
+
+if [[ -z "${COLUMNS}" ]]; then
+    cols="212"
+fi
+
+wallpaper=$(find ~/Pictures/wallpapers -type f | fzf --preview="catimg -r2 -w$cols {}")
+
+if [[ $wallpaper ]]; then
+    feh --bg-fill $wallpaper
+fi
