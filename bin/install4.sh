@@ -18,7 +18,7 @@ npm run build-plugin
 
 # Tools
 cd ~/bin/.local
-chmod +x bin/*
+sudo chmod +x bin/*
 cd bin
 
 sudo nala install libxml2-utils -y
@@ -47,4 +47,4 @@ sudo make install
 cd ~/dev/scripts
 
 git clone git@github.com:tobias-z/tmux-workspaces.git
-chmod +x ./tmux-workspaces/src/tw
+sudo chmod +x ./tmux-workspaces/src/tw
