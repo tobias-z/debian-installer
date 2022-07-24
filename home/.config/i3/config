@@ -181,7 +181,7 @@ bar {
 # MY CONFIG
 bindsym $mod+Shift+comma exec "xmodmap ~/.Xmodmap"
 
-bindsym $mod+Shift+Delete exec "systemctl poweroff"
+bindsym $mod+Shift+Delete exec "shutdown -h now"
 bindsym $mod+Shift+x exec "i3lock"
 
 # audio
@@ -193,7 +193,8 @@ bindsym $mod+Shift+minus exec --no-startup-id ~/bin/.local/bin/set-vol.sh -5%
 
 # Open keybinds
 bindsym $mod+i exec brave-browser
-bindsym $mod+Return exec i3-sensible-terminal
+# bindsym $mod+Return exec i3-sensible-terminal
+bindsym $mod+Return exec alacritty
 
 bindsym $mod+Shift+q kill
 
