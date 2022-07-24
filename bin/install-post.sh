@@ -20,9 +20,9 @@ path=$(dirname $(realpath $0))
 execute_file () {
     local file_name=$path/$1
     echo "Installing $file_name ..."
-    source $file_name $email
+    . $file_name $email
     if [ -f "$HOME/.zshrc" ]; then
-        source $HOME/.zshrc
+        . $HOME/.zshrc
     fi
 
     if [ $? -eq 1 ]; then

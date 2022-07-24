@@ -1,6 +1,6 @@
 curl https://raw.githubusercontent.com/creationix/nvm/master/install.sh | bash
 
-source ~/.zshrc
+. ~/.zshrc
 
 nvm install 16
 nvm install --lts
