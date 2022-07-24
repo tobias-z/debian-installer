@@ -13,6 +13,9 @@
 # `infocmp xterm-256color`.
 # TERM: xterm-256color-italic
 
+# env:
+#   TERM: xterm-256color
+
 window:
   # Window dimensions (changes require restart)
   #
@@ -55,6 +58,7 @@ window:
 
   # Background opacity
   opacity: 1.0
+  gtk_theme_variant: None
 
 scrolling:
   # maximum number of lines in the scrollback buffer. Specifying '0' will
@@ -106,7 +110,7 @@ font:
   #
   # This is a global setting and will require a log out or restart to take
   # effect.
-  use_thin_strokes: true
+  # use_thin_strokes: true
 
 # When true, bold text is drawn using the bright variant of colors.
 draw_bold_text_with_bright_colors: true
@@ -470,3 +474,8 @@ debug:
 
   # Record all characters and escape sequences as test data.
   ref_test: false
+
+shell:
+  program: /usr/bin/zsh
+  args:
+    - --login
