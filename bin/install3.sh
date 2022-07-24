@@ -38,6 +38,11 @@ sudo nala install gyazo -y
 
 sudo nala install software-properties-common apt-transport-https wget ca-certificates gnupg2 -y
 
+# Peek for gif generation
+sudo add-apt-repository ppa:peek-developers/stable
+sudo apt-get update
+sudo apt-get install peek
+
 # Slack, Discord, vscode, Teams
 sudo snap install core
 sudo snap install slack --classic
