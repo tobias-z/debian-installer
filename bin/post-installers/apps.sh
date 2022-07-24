@@ -6,26 +6,13 @@ sudo nala install gyazo -y
 
 sudo nala install software-properties-common apt-transport-https wget ca-certificates gnupg2 -y
 
-# Slack
 sudo snap install core
 sudo snap install slack --classic
+sudo snap install discord
+sudo snap install --classic code
 
-# Teams
-wget -O- https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor | sudo tee /usr/share/keyrings/ms-teams.gpg
-echo 'deb [signed-by=/usr/share/keyrings/ms-teams.gpg] https://packages.microsoft.com/repos/ms-teams stable main' | sudo tee /etc/apt/sources.list.d/ms-teams.list
-sudo nala update -y
-sudo nala install teams -y
-
-# Discord
-cd ~/Downloads/
-wget "https://discord.com/api/download?platform=linux&format=deb" –O discord.deb
-sudo nala install ./discord.deb -y
-
-# VSCode
-wget -O- https://packages.microsoft.com/keys/microsoft.asc | sudo gpg --dearmor | sudo tee /usr/share/keyrings/vscode.gpg
-echo 'deb [arch=amd64 signed-by=/usr/share/keyrings/vscode.gpg] https://packages.microsoft.com/repos/vscode stable main' | sudo tee /etc/apt/sources.list.d/vscode.list
-sudo nala update -y
-sudo nala install code -y
+wget https://packages.microsoft.com/repos/ms-teams/pool/main/t/teams/teams_1.5.00.10453_amd64.deb
+sudo dpkg -i teams_1.5.00.10453_amd64.deb
 
 # Jetbrains toolbox
 wget --show-progress -qO ./toolbox.tar.gz "https://data.services.jetbrains.com/products/download?platform=linux&code=TBA"

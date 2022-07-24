@@ -7,6 +7,7 @@ Installation of my own debian system
 From the root folder run:
 
 ```bash
+# If you get source is not found error run 'dpkg-reconfigure dash' and select no when asked
 sh bin/install.sh
 ```
 

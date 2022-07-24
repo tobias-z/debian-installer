@@ -157,6 +157,19 @@ open() {
     fi
 }
 
+apt() {
+  command nala "$@"
+}
+
+sudo() {
+  if [ "$1" = "apt" ]; then
+    shift
+    command sudo nala "$@"
+  else
+    command sudo "$@"
+  fi
+}
+
 deploy() {
     npm run build
     scp -r ./build/* droplet:/var/www/$1
@@ -182,12 +195,12 @@ storm() {
 	sh $HOME/.local/share/JetBrains/Toolbox/apps/WebStorm/ch-0/221.5080.193/bin/webstorm.sh $1
 }
 
-# export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
-# [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
+export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-# export SDKMAN_DIR="$HOME/.sdkman"
-# [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
+export SDKMAN_DIR="$HOME/.sdkman"
+[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
 
 # Generated for envman. Do not edit.
 [ -s "$HOME/.config/envman/load.sh" ] && source "$HOME/.config/envman/load.sh"
