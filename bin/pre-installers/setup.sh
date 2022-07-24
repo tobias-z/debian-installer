@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/zsh
 
 sudo apt update -y
 sudo apt upgrade -y

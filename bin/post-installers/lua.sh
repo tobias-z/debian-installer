@@ -1,3 +1,5 @@
+#!/bin/zsh
+
 sudo nala install lua -y
 sudo nala install luarocks -y
 

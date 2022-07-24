@@ -1,3 +1,5 @@
+#!/bin/zsh
+
 cd ~/dev/scripts
 
 git clone git@github.com:tobias-z/tmux-workspaces.git

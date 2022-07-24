@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/zsh
 
 path=$(dirname $(realpath $0))
 sudo cp -r $path/../../home/.[^.]* $HOME

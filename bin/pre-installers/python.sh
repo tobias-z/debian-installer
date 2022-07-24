@@ -1,3 +1,4 @@
+#!/bin/zsh
 sudo add-apt-repository ppa:deadsnakes/ppa -y
 sudo nala install python3 -y
 sudo nala install -y python3-pip

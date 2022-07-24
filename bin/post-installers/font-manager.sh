@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/zsh
 
 sudo add-apt-repository ppa:font-manager/staging -y
 sudo nala update

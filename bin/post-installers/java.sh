@@ -1,3 +1,5 @@
+#!/bin/zsh
+
 sdk install java 17.0.4-amzn
 sdk install java 8.0.342-amzn
 sdk install java 11.0.16-amzn

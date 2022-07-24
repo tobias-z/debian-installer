@@ -1,3 +1,4 @@
+#!/bin/zsh
 # https://docs.docker.com/engine/install/ubuntu/
 
 # Should be no way we have these but w/e

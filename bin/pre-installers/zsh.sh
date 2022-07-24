@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/zsh
 
 sudo nala install zsh -y
 chsh -s $(which zsh)

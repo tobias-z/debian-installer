@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/zsh
 
 # brave browser
 sudo nala install apt-transport-https curl -y

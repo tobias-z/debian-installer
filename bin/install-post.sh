@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/zsh
 
 email="tobias.zimmer007@gmail.com"
 
@@ -21,9 +21,9 @@ execute_file () {
     local file_name=$path/$1
     echo "Installing $file_name ..."
     if [ -f "$HOME/.zshrc" ]; then
-        . $HOME/.zshrc
+        source $HOME/.zshrc
     fi
-    . $file_name $email
+    source $file_name $email
 
     if [ $? -eq 1 ]; then
         echo "Failed to install $file"

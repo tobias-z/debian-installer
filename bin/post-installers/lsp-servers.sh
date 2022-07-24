@@ -1,3 +1,4 @@
+#!/bin/zsh
 # sudo npm i -g vscode-langservers-extracted
 # sudo npm install -g cssmodules-language-server
 #
