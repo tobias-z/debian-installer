@@ -61,13 +61,19 @@ function handlers.go_to_references(opts)
   local filepath = vim.api.nvim_buf_get_name(bufnr)
   local lnum = vim.api.nvim_win_get_cursor(0)[1]
   local params = vim.lsp.util.make_position_params(0)
-  params.context = { includeDeclaration = true }
+  params.context = { includeDeclaration = false }
 
   vim.lsp.buf_request(bufnr, "textDocument/references", params, function(_, result, ctx, _)
+    local visited = {}
     local locations = {}
     if result then
       local results = vim.lsp.util.locations_to_items(result, vim.lsp.get_client_by_id(ctx.client_id).offset_encoding)
       locations = vim.tbl_filter(function(v)
+        local key = string.format("%s%d", v.filename, v.lnum)
+        if visited[key] then
+          return false
+        end
+        visited[key] = true
         return not (v.filename == filepath and v.lnum == lnum)
       end, vim.F.if_nil(results, {}))
     end
