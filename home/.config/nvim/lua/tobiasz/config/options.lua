@@ -4,9 +4,7 @@ vim.notify = require("notify")
 
 vim.cmd([[set mouse=a]])
 vim.cmd([[set backspace=indent,eol,start]])
-vim.cmd([[set undodir=~/.vim/undodir]])
 
--- set.guicursor = "n-v-c-sm:block,i-ci-ve:ver25,r-cr-o:hor20,a:blinkon1"
 set.expandtab = true
 set.smarttab = true
 set.shiftwidth = 4
@@ -25,6 +23,7 @@ set.splitbelow = true
 set.splitright = true
 set.wrap = false
 set.swapfile = false
+set.undodir = os.getenv("HOME") .. "/.vim/undodir"
 set.backup = false
 set.undofile = true
 
@@ -41,3 +40,4 @@ set.updatetime = 50
 set.laststatus = 3
 set.pumblend = 5
 set.pumheight = 14
+set.lazyredraw = true

@@ -2,9 +2,9 @@ local mark = require("harpoon.mark")
 local ui = require("harpoon.ui")
 
 local function nav_to(id)
-    return function()
-        ui.nav_file(id)
-    end
+  return function()
+    ui.nav_file(id)
+  end
 end
 
 VMap.nmap("<leader>a", mark.add_file)

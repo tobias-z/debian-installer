@@ -6,27 +6,27 @@ builder.vscode_snip("cl", "console.log($0);")
 builder.vscode_snip("class", Multiline_string("class $1 {", "\t$0", "}"))
 
 builder.vscode_snip(
-	"try",
-	Multiline_string("try {", "\t$0", "} catch(error) {", "\tconsole.error(error.message);", "}")
+  "try",
+  Multiline_string("try {", "\t$0", "} catch(error) {", "\tconsole.error(error.message);", "}")
 )
 
 builder.vscode_snip(
-	"tryfinally",
-	Multiline_string("try {", "\t$0", "} catch(error) {", "\tconsole.error(error.message);", "} finally {", "\t$1", "}")
+  "tryfinally",
+  Multiline_string("try {", "\t$0", "} catch(error) {", "\tconsole.error(error.message);", "} finally {", "\t$1", "}")
 )
 
 builder.vscode_snip(
-	"redf",
-	Multiline_string(
-		"function $1(state, action) {",
-		"\tswitch (action.type) {",
-		'\t\tcase "$0":',
-		"\t\t\treturn",
-		"\t\tdefault:",
-		"\t\t\treturn state",
-		"\t}",
-		"}"
-	)
+  "redf",
+  Multiline_string(
+    "function $1(state, action) {",
+    "\tswitch (action.type) {",
+    '\t\tcase "$0":',
+    "\t\t\treturn",
+    "\t\tdefault:",
+    "\t\t\treturn state",
+    "\t}",
+    "}"
+  )
 )
 
 -- tests
