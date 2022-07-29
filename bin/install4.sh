@@ -48,3 +48,7 @@ cd ~/dev/scripts
 
 git clone git@github.com:tobias-z/tmux-workspaces.git
 sudo chmod +x ./tmux-workspaces/src/tw
+
+cd ~/Documents/
+git clone git@github.com:tobias-z/my-notes.git
+sudo chmod +x ./my-notes/bin/notes
