@@ -16,7 +16,7 @@ export PATH=$HOME/dev/scripts/tmux-workspaces/src:$PATH
 export TW_CONFIG="$HOME/.config/tw"
 export TW_PATHS="$HOME/dev/tz-stack $HOME/dev/scripts $HOME/dev/js $HOME/dev/rust $HOME/Documents $HOME/.config $HOME/dev/plugins"
 export TW_MAIN_WINDOW="main"
-export PATH=$HOME/Documents/notes/bin:$PATH
+export PATH=$HOME/Documents/my-notes/bin:$PATH
 export PATH=$HOME/dev/containers/bin:$PATH
 
 export PATH="$HOME/.cargo/bin/alacritty/:$PATH"
