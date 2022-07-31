@@ -5,7 +5,7 @@ return require("packer").startup(function(use)
   end
 
   use_local("postfix-completion.nvim")
-  use_local("nvim-search-and-replace")
+  -- use_local("nvim-search-and-replace")
   use_local("dim.lua")
 
   -- fast startups
@@ -23,7 +23,7 @@ return require("packer").startup(function(use)
   use("justinmk/vim-sneak")
   use("mg979/vim-visual-multi")
   use("davidgranstrom/nvim-markdown-preview")
-  -- use("s1n7ax/nvim-search-and-replace")
+  use("s1n7ax/nvim-search-and-replace")
 
   --  ui for text
   use("stevearc/dressing.nvim")

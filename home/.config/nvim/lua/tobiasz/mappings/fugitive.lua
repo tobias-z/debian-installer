@@ -1,6 +1,6 @@
 VMap.nmap("<leader>gg", "<cmd>G<CR>")
 VMap.nmap("<leader>ga", "<cmd>G add -A<CR>")
-VMap.nmap("<leader>gc", "<cmd>G commit -S<CR>")
+VMap.nmap("<leader>gc", "<cmd>G commit <CR>")
 VMap.nmap("<leader>gp", "<cmd>G push<CR>")
 
 -- Merging

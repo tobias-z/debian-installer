@@ -18,6 +18,7 @@ set.errorbells = false
 set.expandtab = true
 set.ignorecase = true
 set.smartcase = true
+set.showmatch = true
 
 set.splitbelow = true
 set.splitright = true
@@ -35,9 +36,25 @@ set.relativenumber = true
 set.number = true
 set.cursorline = true
 set.spell = false
-set.updatetime = 50
+set.updatetime = 1000
 
 set.laststatus = 3
 set.pumblend = 5
 set.pumheight = 14
 set.lazyredraw = true
+
+set.autoindent = true
+set.cindent = true
+set.formatoptions = set.formatoptions
+  - "a" -- Auto formatting is BAD.
+  - "t" -- Don't auto format my code. I got linters for that.
+  + "c" -- In general, I like it when comments respect textwidth
+  + "q" -- Allow formatting comments w/ gq
+  - "o" -- O and o, don't continue comments
+  + "r" -- But do continue when pressing enter.
+  + "n" -- Indent past the formatlistpat, not underneath it.
+  + "j" -- Auto-remove comments if possible.
+  - "2" -- I'm not in gradeschool anymore
+
+set.wildignore = "__pycache__"
+set.wildignore = set.wildignore + { "*.o", "*~", "*.pyc", "*pycache*" }

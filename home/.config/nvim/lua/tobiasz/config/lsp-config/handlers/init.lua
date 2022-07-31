@@ -33,7 +33,7 @@ function handlers.go_to_definition(on_no_result)
       return
     end
 
-    if vim.tbl_count(result) == 1 then
+    if #result == 1 then
       local res = result[1]
       local uri = res.uri ~= nil and res.uri or res.targetUri
       local range = res.range ~= nil and res.range or res.targetSelectionRange
@@ -64,9 +64,9 @@ function handlers.go_to_references(opts)
   params.context = { includeDeclaration = false }
 
   vim.lsp.buf_request(bufnr, "textDocument/references", params, function(_, result, ctx, _)
-    local visited = {}
     local locations = {}
     if result then
+      local visited = {}
       local results = vim.lsp.util.locations_to_items(result, vim.lsp.get_client_by_id(ctx.client_id).offset_encoding)
       locations = vim.tbl_filter(function(v)
         local key = string.format("%s%d", v.filename, v.lnum)
@@ -82,7 +82,7 @@ function handlers.go_to_references(opts)
       return
     end
 
-    if vim.tbl_count(locations) == 1 then
+    if #locations == 1 then
       local location = locations[1]
       jump_to_result({
         range = {
@@ -112,12 +112,17 @@ end
 
 function handlers.rename(new_name, opts)
   opts = opts or {}
-  if vim.o.filetype == "java" then
-    -- TODO: And is renaming field
-    java.field_rename(new_name, opts)
-  else
-    vim.lsp.buf.rename(new_name, opts)
+  local has_treesitter, ts_utils = pcall(require, "nvim-treesitter.ts_utils")
+
+  if vim.o.filetype == "java" and has_treesitter then
+    local node_at_cursor = ts_utils.get_node_at_cursor(0)
+    if java.is_field(node_at_cursor) then
+      java.field_rename({ new_name = new_name, opts = opts, node_at_cursor = node_at_cursor })
+      return
+    end
   end
+
+  vim.lsp.buf.rename(new_name, opts)
 end
 
 return handlers

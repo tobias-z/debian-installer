@@ -3,7 +3,7 @@ local M = {}
 M.capabilities = require("cmp_nvim_lsp").update_capabilities(vim.lsp.protocol.make_client_capabilities())
 
 M.on_attach = function(client, bufnr)
-  local opts = { noremap = true, silent = true, buffer = true }
+  local opts = { noremap = true, silent = true, buffer = bufnr }
   if client.name == "tsserver" then
     require("tobiasz.config.lsp-config.ts-utils")(client)
   end
