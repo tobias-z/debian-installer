@@ -1,0 +1,14 @@
+#!/bin/bash
+
+# Call with eval `sync-worktree ${worktree_name}`
+worktree_name=$1
+
+if [ ! $worktree_name ]; then
+    exit 0
+fi
+
+if [ ! -d $worktree_name ]; then
+    worktree_name="../$worktree_name"
+fi
+
+echo "cd $worktree_name && clear"

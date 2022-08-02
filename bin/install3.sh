@@ -136,3 +136,4 @@ luarocks install luacheck
 luarocks install lanes
 
 cargo install stylua
+cargo install tree-sitter-cli
