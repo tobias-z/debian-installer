@@ -12,7 +12,8 @@ M.on_attach = function(client, bufnr)
 
   vim.keymap.set("n", "gD", "<cmd>lua vim.lsp.buf.declaration()<CR>", opts)
   vim.keymap.set("n", "K", "<cmd>lua vim.lsp.buf.hover()<CR>", opts)
-  vim.keymap.set("n", "<F2>", require("tobiasz.config.lsp-config.handlers").rename, opts)
+  -- vim.keymap.set("n", "<F2>", require("tobiasz.config.lsp-config.handlers").rename, opts)
+  vim.keymap.set("n", "<F2>", require("java_util.lsp").rename, opts)
   vim.keymap.set("n", "<leader>f", "<cmd>lua vim.lsp.buf.format()<CR>", opts)
   vim.keymap.set("n", "<C-n>", "<cmd>lua vim.lsp.buf.code_action()<CR>", opts)
 

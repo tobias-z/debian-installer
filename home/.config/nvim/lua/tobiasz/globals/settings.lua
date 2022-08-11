@@ -15,6 +15,7 @@ local tab_settings = {
       "yaml",
       "tex",
       "lua",
+      "markdown",
     },
     config = {
       tab_size = 2,

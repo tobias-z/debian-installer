@@ -8,6 +8,7 @@ local java = require("tobiasz.config.lsp-config.handlers.java-handlers")
 local handlers = {}
 
 local function jump_to_result(result)
+  P(result)
   if vim.tbl_islist(result) then
     vim.lsp.util.jump_to_location(result[1], "utf-8")
   else
@@ -96,17 +97,19 @@ function handlers.go_to_references(opts)
       return
     end
 
-    pickers.new(opts, {
-      prompt_title = "LSP References",
-      finder = finders.new_table({
-        results = locations,
-        entry_maker = opts.entry_maker or make_entry.gen_from_quickfix(opts),
-      }),
-      previewer = conf.qflist_previewer(opts),
-      sorter = conf.generic_sorter(opts),
-      push_cursor_on_edit = true,
-      push_tagstack_on_edit = true,
-    }):find()
+    pickers
+      .new(opts, {
+        prompt_title = "LSP References",
+        finder = finders.new_table({
+          results = locations,
+          entry_maker = opts.entry_maker or make_entry.gen_from_quickfix(opts),
+        }),
+        previewer = conf.qflist_previewer(opts),
+        sorter = conf.generic_sorter(opts),
+        push_cursor_on_edit = true,
+        push_tagstack_on_edit = true,
+      })
+      :find()
   end)
 end
 

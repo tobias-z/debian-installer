@@ -7,6 +7,17 @@ return require("packer").startup(function(use)
   use_local("postfix-completion.nvim")
   -- use_local("nvim-search-and-replace")
   use_local("dim.lua")
+  use_local("java-util.nvim")
+  --
+
+  -- use({
+  --   "tobias-z/java-util.nvim",
+  --   branch = "main",
+  --   -- or tag = "0.1.0"
+  --   requires = {
+  --     { "nvim-treesitter/nvim-treesitter" },
+  --   },
+  -- })
 
   -- fast startups
   use("lewis6991/impatient.nvim")
@@ -33,6 +44,7 @@ return require("packer").startup(function(use)
   use("windwp/nvim-ts-autotag")
   use("nvim-treesitter/playground")
   use("windwp/nvim-autopairs")
+  -- use("tjdevries/tree-sitter-lua") -- For doc generation
 
   -- lsp
   use({
@@ -76,6 +88,7 @@ return require("packer").startup(function(use)
 
   use("ThePrimeagen/harpoon")
   use("ThePrimeagen/refactoring.nvim")
+  use("ThePrimeagen/git-worktree.nvim")
 
   -- comments
   use("tjdevries/vim-inyoface")

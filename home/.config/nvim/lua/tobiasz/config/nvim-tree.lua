@@ -15,12 +15,12 @@ local function edit_or_open()
 
   if node.link_to and not node.nodes then
     require("nvim-tree.actions.node.open-file").fn(action, node.link_to)
-    -- view.close()
+    view.close()
   elseif node.nodes ~= nil then
     lib.expand_or_collapse(node)
   else
     require("nvim-tree.actions.node.open-file").fn(action, node.absolute_path)
-    -- view.close()
+    view.close()
   end
 end
 
@@ -47,10 +47,12 @@ require("nvim-tree").setup({
   diagnostics = {
     enable = true,
     show_on_dirs = true,
+    icons = { hint = "", info = "", warning = "", error = "" },
   },
   filters = {
     custom = {
       "node_modules",
+      "\\.git$",
     },
   },
   git = {

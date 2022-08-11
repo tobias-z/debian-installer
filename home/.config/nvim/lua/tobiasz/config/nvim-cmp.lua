@@ -1,5 +1,9 @@
 local luasnip = require("luasnip")
-local cmp = require("cmp")
+local ok, cmp = pcall(require, "cmp")
+
+if not ok then
+  return
+end
 
 local cmp_kinds = {
   Text = "",
@@ -85,10 +89,10 @@ cmp.setup({
     ["<C-n>"] = cmp.mapping(cmp.mapping.select_next_item()),
     ["<C-p>"] = cmp.mapping(cmp.mapping.select_prev_item()),
     ["<C-Space>"] = cmp.mapping.complete(),
-    ["<CR>"] = cmp.mapping.confirm({
-      -- behavior = cmp.ConfirmBehavior.Replace,
-      select = true,
-    }),
+    -- ["<CR>"] = cmp.mapping.confirm({
+    --   -- behavior = cmp.ConfirmBehavior.Replace,
+    --   select = true,
+    -- }),
     ["<Esc>"] = cmp.mapping.close(),
     ["<Tab>"] = cmp.mapping(function(fallback)
       if cmp.visible() then

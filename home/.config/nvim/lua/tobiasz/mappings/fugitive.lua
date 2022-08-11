@@ -3,6 +3,8 @@ VMap.nmap("<leader>ga", "<cmd>G add -A<CR>")
 VMap.nmap("<leader>gc", "<cmd>G commit <CR>")
 VMap.nmap("<leader>gp", "<cmd>G push<CR>")
 
+VMap.nmap("<leader>gv", "<cmd>!gh repo view --web<CR>")
+
 -- Merging
 
 VMap.nmap("<leader>gd", "<cmd>Gdiffsplit<CR>")

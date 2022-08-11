@@ -42,3 +42,7 @@ VMap.nmap("<leader>pp", require("telescope").extensions.project.project)
 VMap.nmap("<leader>nm", require("telescope").extensions.node_modules.list)
 VMap.nmap("<leader>pb", require("telescope").extensions.bookmarks.bookmarks)
 VMap.nmap("<leader>pe", require("telescope").extensions.emoji.emoji)
+
+-- Git worktrees
+VMap.nmap("<leader>.", require("telescope").extensions.git_worktree.git_worktrees)
+VMap.nmap("<leader><leader>.", require("telescope").extensions.git_worktree.create_git_worktree)

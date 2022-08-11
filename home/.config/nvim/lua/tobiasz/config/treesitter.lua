@@ -1,7 +1,7 @@
 require("nvim-treesitter.configs").setup({
   -- A list of parser names, or "all"
   ensure_installed = {
-    "lua",
+    -- "lua",
     "javascript",
     "typescript",
     "tsx",
@@ -16,7 +16,7 @@ require("nvim-treesitter.configs").setup({
   },
 
   -- Automatically install missing parsers when entering buffer
-  auto_install = true,
+  auto_install = false,
 
   -- Install parsers synchronously (only applied to `ensure_installed`)
   sync_install = false,

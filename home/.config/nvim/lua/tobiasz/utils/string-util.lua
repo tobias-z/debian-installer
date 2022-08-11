@@ -17,4 +17,8 @@ function M.starts_with(str, pattern)
   return str:find("^" .. pattern) ~= nil
 end
 
+function M.last_index_of(str, pattern)
+  return string.match(str, "^.*()" .. pattern)
+end
+
 return M

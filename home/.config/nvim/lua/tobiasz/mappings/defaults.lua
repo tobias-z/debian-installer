@@ -24,4 +24,4 @@ VMap.vmap("<C-K>", ":m '<-2<CR>gv=gv")
 
 VMap.tmap("<Esc>", "<C-\\><C-n>")
 
-VMap.vmap("<leader>y", '"*y')
+VMap.vmap("<leader>y", '"+y')
