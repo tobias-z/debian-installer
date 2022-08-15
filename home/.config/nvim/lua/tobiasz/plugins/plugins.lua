@@ -4,11 +4,7 @@ return require("packer").startup(function(use)
     use(string.format("%s/dev/plugins/%s", home, plugin))
   end
 
-  use_local("postfix-completion.nvim")
-  -- use_local("nvim-search-and-replace")
-  use_local("dim.lua")
   use_local("java-util.nvim")
-  --
 
   -- use({
   --   "tobias-z/java-util.nvim",
@@ -38,13 +34,13 @@ return require("packer").startup(function(use)
 
   --  ui for text
   use("stevearc/dressing.nvim")
+  use("NarutoXY/dim.lua")
 
   -- treesitter
   use({ "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" })
   use("windwp/nvim-ts-autotag")
   use("nvim-treesitter/playground")
   use("windwp/nvim-autopairs")
-  -- use("tjdevries/tree-sitter-lua") -- For doc generation
 
   -- lsp
   use({
@@ -77,7 +73,10 @@ return require("packer").startup(function(use)
   use("nvim-telescope/telescope-project.nvim")
   use("nvim-telescope/telescope-node-modules.nvim")
   use("nvim-telescope/telescope-dap.nvim")
-  use("dhruvmanila/telescope-bookmarks.nvim")
+  use({
+    "dhruvmanila/telescope-bookmarks.nvim",
+    requires = { "kkharji/sqlite.lua" },
+  })
   use("xiyaowong/telescope-emoji.nvim")
   use({
     "nvim-telescope/telescope-github.nvim",

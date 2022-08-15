@@ -27,22 +27,20 @@ telescope.setup({
     -- dont preview binaries
     buffer_previewer_maker = function(filepath, bufnr, opts)
       filepath = vim.fn.expand(filepath)
-      Job
-        :new({
-          command = "file",
-          args = { "--mime-type", "-b", filepath },
-          on_exit = function(j)
-            local mime_type = vim.split(j:result()[1], "/")[1]
-            if mime_type == "text" then
-              previewers.buffer_previewer_maker(filepath, bufnr, opts)
-            else
-              vim.schedule(function()
-                vim.api.nvim_buf_set_lines(bufnr, 0, -1, false, { "BINARY" })
-              end)
-            end
-          end,
-        })
-        :sync()
+      Job:new({
+        command = "file",
+        args = { "--mime-type", "-b", filepath },
+        on_exit = function(j)
+          local mime_type = vim.split(j:result()[1], "/")[1]
+          if mime_type == "text" then
+            previewers.buffer_previewer_maker(filepath, bufnr, opts)
+          else
+            vim.schedule(function()
+              vim.api.nvim_buf_set_lines(bufnr, 0, -1, false, { "BINARY" })
+            end)
+          end
+        end,
+      }):sync()
     end,
   },
   preview = {
@@ -98,7 +96,7 @@ telescope.setup({
     project = no_preview,
     bookmarks = {
       -- Available: 'brave', 'buku', 'chrome', 'chrome_beta', 'edge', 'safari', 'firefox', 'vivaldi'
-      selected_browser = "brave",
+      selected_browser = "firefox",
 
       -- Either provide a shell command to open the URL
       url_open_command = is_mac and "open" or "xdg-open",
